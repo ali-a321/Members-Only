@@ -1,0 +1,27 @@
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    header 
+     a(href="/") The Secret Club
+  body
+    div.navbar
+      if (!user)
+        ul 
+          a(href='/sign-up') 
+            li Sign Up  
+          a(href="/log-in") 
+            li Log in 
+      else 
+        ul
+          li.userHandle= user.username
+          a(href="/create-message") 
+            li Create Message
+          a(href="/member") 
+            li Become Exlusive Member
+          a(href="/admin") 
+            li Admin
+          a(href="/log-out") 
+            li Log out
+
+    block content

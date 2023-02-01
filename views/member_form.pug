@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  body
+
+    div.loginContainer
+      if (!user.member)
+        form.login-form(action='/member' method='POST')
+            label(for='secretPhrase') Become a member
+            input#secretPhrase(name='secretPhrase'  type='text' required="true" placeholder="The secret phrase is shhshh")
+            if (passcodeError)
+                p(style="color: red") #{passcodeError}
+            button(type="submit") Submit Secret Phrase
+        if (errors)
+            p #{errors}
+      if (user.member)
+        div Congratulations, you are an exclusive member.

@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Shhhh
+  body
+ 
+   each message in messages
+    div.messageContainer
+        if (!user || !user.member)
+          div
+            div.messageBack
+              .messageTitle= message.title
+              .messageInfo=message.text
+              .messageAuthor
+                | By: Unknown at 
+                span.messageTime 2pm On 1000 BC  
+        if(user && user.member) 
+          div
+            div.messageBack
+              .messageTitle= message.title
+              .messageInfo=message.text
+              span Posted by <strong>
+              messageAuthor= message.user.username 
+                </strong>
+              .messageTime= message.time
+              if(user && user.admin)
+                form.deleteForm(action="" method="POST")
+                  input#messageId(type="hidden", name="messageId", required="true", value=message._id)
+                  button.delBtn(type="submit") Delete     
+        
+
+

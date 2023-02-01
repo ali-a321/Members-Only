@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  body
+      div.messageCreate 
+        form.messageCreate(action='/create-message' method='POST')
+            h3 Add message
+            input#messageTitle(type='text' name='messageTitle' placeholder='Title' maxlength='25' required = "true")
+            textarea#messageInfo(name='messageInfo' placeholder='Type a message' required = "true" )
+            button.submitBtn(type='submit' value='Submit')  Submit
+        if (errors)
+          p #{errors}

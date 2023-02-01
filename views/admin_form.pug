@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  body
+
+    div.loginContainer
+      if (!user.admin)
+        form.login-form(action='/admin' method='POST')
+            label(for='secretCode') Become an Admin
+            input#secretCode(name='secretCode'  type='text' required="true" placeholder="The admin phrase is shh")
+            if (passcodeError)
+                p(style="color: red") #{passcodeError}
+            button(type="submit") Submit Admin Phrase
+        if (errors)
+            p #{errors}
+      if (user.admin)
+        div Congratulations, you are now an Admin. You have the rights to delete any message you want.

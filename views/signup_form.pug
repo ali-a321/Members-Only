@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  body
+    div.signupContainer
+      form.signup-form(action="/sign-up" method="POST")
+        label(for="firstname") First Name: 
+        input#firstname(type="text" name="firstname" required="true" maxLength="20")
+        if (error)
+          p(style="color: red;") #{error}
+        label(for="lastname") Last Name: 
+        input#lastname(type="text" name="lastname" required="true" maxLength="20")
+        if (error)
+          p(style="color: red;") #{error}
+        label(for="username") Username: 
+        input#username(type="text" name="username" required="true" maxLength="20")
+        if (error)
+          p(style="color: red;") #{error}
+        label(for="password") Password: 
+        input#password(type="password" name="password" required="true")
+        label(for="confirmPassword") Confirm Password: 
+        input#confirmpassword(type="password" name="confirmpassword" required="true")
+        if (passwordConfirmationError)
+          p(style="color: red;") #{passwordConfirmationError}
+        button.signup-btn(type="submit") Register
+        div.auth-alternative Already registered? 
+        a(href="log-in") Log in
+  if (errors)
+    p #{errors}
