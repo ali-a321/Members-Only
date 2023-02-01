@@ -1,0 +1,100 @@
+body {
+margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: whitesmoke;
+
+}
+
+a {
+  color: #00B7FF;
+}
+header{
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.login-form, .signup-form{
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  justify-content: center;
+}
+.login-btn, .signup-btn{
+  margin-top: 1rem;
+}
+.loginContainer, .signupContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 1rem;
+  margin-right: 4rem;
+  font-size: 1rem;
+
+}
+.auth-alternative{
+  margin-top: 1rem;
+}
+.messageContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.messageBack{
+  background-color: lightgray;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 30vw;
+}
+.navbar{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: lightgray;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+ul{
+  list-style: none;
+}
+li{
+  display: inline;
+
+  margin-right: 2rem;
+}
+a{
+  text-decoration: none;
+}
+.messageCreate{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+textarea, .titleBox{
+  width: 20rem;
+  margin: 0.2rem;
+}
+.submitBtn{
+  margin-top: 1rem;
+}
+.deleteForm{
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.userHandle{
+ font-weight: bold; 
+}
